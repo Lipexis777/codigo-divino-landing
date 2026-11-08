@@ -4,44 +4,56 @@ Landing page de venda (uma página só, HTML/CSS puro, sem build) para o
 e-book "Código Divino", com botão de compra apontando para o checkout
 da Kiwify.
 
-## Antes de divulgar: troque o link da Kiwify
+## 🌐 Site no ar agora (grátis)
 
-No arquivo `index.html`, procure por `SUBSTITUIR-LINK-KIWIFY` (um único
+https://lipexis777.github.io/codigo-divino-landing/
+
+Publicado via GitHub Pages a partir deste repositório (branch `main`).
+Não expira e não tem custo — serve bem até valer a pena comprar um
+domínio próprio.
+
+## ⚠️ Antes de divulgar: troque o link da Kiwify
+
+No arquivo `index.html`, procure por `SUBSTITUIR-LINK-KIWIFY` (único
 lugar, no botão "Comprar ahora →") e troque pelo link real do checkout
-do produto na Kiwify. Algo como:
+do produto na Kiwify, algo como:
 
 ```html
 <a href="https://pay.kiwify.com.br/SEU-LINK-REAL" ...>
 ```
 
-## Hospedagem gratuita (Vercel)
+Depois de editar, suba a alteração (veja "Como atualizar o site"
+abaixo) — o GitHub Pages atualiza sozinho em cerca de 1 minuto.
 
-O site já foi publicado com `vercel deploy --temporary`, que não exige
-login e gera uma URL pública na hora. Essa URL funciona, mas é
-temporária/"não reivindicada" — fica live por um tempo, depois some se
-ninguém assumir o projeto.
+## Como atualizar o site
 
-Para deixar fixo e de graça por tempo indeterminado (até valer a pena
-comprar um domínio):
+Se o `git push` normal funcionar no seu computador, é só:
+```
+git add index.html
+git commit -m "fix: link da kiwify"
+git push
+```
 
-1. Crie uma conta grátis em https://vercel.com (pode usar login com
-   GitHub).
-2. No terminal, dentro desta pasta, rode:
-   ```
-   npx vercel login
-   npx vercel link
-   npx vercel --prod
-   ```
-3. Isso gera uma URL fixa tipo `codigo-divino-landing.vercel.app`,
-   sem custo, enquanto você não tiver domínio próprio.
+Se preferir, também dá pra editar o arquivo direto pela interface do
+GitHub (https://github.com/Lipexis777/codigo-divino-landing) — clique
+em `index.html` → ícone de lápis → editar → "Commit changes".
 
-Também é possível reivindicar a *mesma* implantação temporária feita
-agora: o `vercel deploy --temporary` imprime, junto com a URL, um link
-de "claim" — abrindo esse link e logando você assume o projeto sem
-perder o deploy já feito.
+## Quando valer a pena investir num domínio
 
-## Repositório no GitHub
+Duas opções simples, ambas sem precisar recriar o site:
 
-O código também foi versionado e enviado para o GitHub (branch
-`main`), então dá pra conectar esse repositório ao Vercel depois
-(Import Project) para deploy automático a cada alteração.
+1. **Domínio apontando pro GitHub Pages** (mais barato/direto): compre
+   o domínio em qualquer registrador, crie um arquivo `CNAME` na raiz
+   do repo com o domínio, e configure o DNS conforme a documentação do
+   GitHub Pages.
+2. **Migrar para Vercel com domínio próprio**: crie uma conta grátis em
+   https://vercel.com, rode `npx vercel link` e `npx vercel --prod`
+   dentro desta pasta, e depois adicione o domínio no painel do
+   projeto.
+
+## Deploy alternativo já feito na Vercel (temporário)
+
+Também foi gerado um deploy anônimo na Vercel, sem precisar de login:
+isso cria uma URL pública na hora, mas que **expira em 1 hora** se
+ninguém "reivindicar" (claim). Não é a opção recomendada para manter
+no ar — o GitHub Pages acima é a opção permanente e gratuita.
