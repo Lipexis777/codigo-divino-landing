@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Código Divino — El devocional que descifra 15 verdades espirituales</title>
+<meta name="description" content="Código Divino: 15 códigos espirituales explicados con la Palabra, aplicación práctica y afirmaciones para transformar tu fe, tus palabras y tu propósito.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✝️</text></svg>">
+<style>
+  :root{
+    --bg:#0a0e1a;
+    --bg-soft:#0f1526;
+    --card:#111831;
+    --card-border:#212a47;
+    --text:#eef1fb;
+    --text-dim:#9aa4c4;
+    --blue:#5b7cfa;
+    --purple:#9b6bff;
+    --teal:#4fd6c8;
+    --gold:#f3c969;
+    --grad: linear-gradient(135deg, var(--blue), var(--purple));
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 24px;}
+  .bg-glow{
+    position:fixed; inset:0; z-index:-1; pointer-events:none;
+    background:
+      radial-gradient(600px 400px at 15% 0%, rgba(91,124,250,.18), transparent 60%),
+      radial-gradient(600px 500px at 85% 20%, rgba(155,107,255,.16), transparent 60%),
+      radial-gradient(500px 400px at 50% 90%, rgba(79,214,200,.10), transparent 60%);
+  }
+
+  /* NAV */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(10,14,26,.75);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--card-border);
+  }
+  nav{display:flex; align-items:center; justify-content:space-between; padding:16px 24px;}
+  .brand{display:flex; align-items:center; gap:10px; font-weight:800; font-size:1.1rem; letter-spacing:.3px;}
+  .brand .dot{width:10px; height:10px; border-radius:50%; background:var(--grad); box-shadow:0 0 14px var(--purple);}
+  .nav-cta{
+    background:var(--grad); color:#fff; font-weight:700; font-size:.9rem;
+    padding:10px 18px; border-radius:999px; box-shadow:0 6px 20px rgba(91,124,250,.35);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .nav-cta:hover{transform:translateY(-2px); box-shadow:0 10px 26px rgba(91,124,250,.5);}
+
+  /* HERO */
+  .hero{padding:84px 0 60px; text-align:center;}
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    background:rgba(155,107,255,.12); border:1px solid rgba(155,107,255,.35);
+    color:#c9bfff; font-size:.8rem; font-weight:700; letter-spacing:.4px;
+    padding:7px 16px; border-radius:999px; margin-bottom:28px; text-transform:uppercase;
+  }
+  h1{
+    font-size:clamp(2.1rem, 5vw, 3.6rem);
+    font-weight:800; letter-spacing:-1px; line-height:1.12;
+    max-width:880px; margin:0 auto 22px;
+  }
+  h1 span{
+    background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .hero p.lead{
+    color:var(--text-dim); font-size:1.15rem; max-width:620px; margin:0 auto 36px;
+  }
+  .hero-ctas{display:flex; flex-wrap:wrap; gap:16px; justify-content:center; margin-bottom:20px;}
+  .btn-primary{
+    background:var(--grad); color:#fff; font-weight:800; font-size:1.05rem;
+    padding:18px 36px; border-radius:14px; box-shadow:0 10px 30px rgba(91,124,250,.4);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn-primary:hover{transform:translateY(-3px); box-shadow:0 16px 40px rgba(91,124,250,.55);}
+  .btn-ghost{
+    border:1px solid var(--card-border); color:var(--text);
+    padding:18px 30px; border-radius:14px; font-weight:600; font-size:1.05rem;
+    background:rgba(255,255,255,.02);
+  }
+  .btn-ghost:hover{border-color:var(--blue); color:#cdd6ff;}
+  .microcopy{color:var(--text-dim); font-size:.85rem;}
+
+  .hero-card{
+    max-width:820px; margin:56px auto 0; border-radius:20px; padding:2px;
+    background:var(--grad);
+  }
+  .hero-card-inner{
+    background:var(--bg-soft); border-radius:18px; padding:34px;
+    display:grid; grid-template-columns:1fr; gap:10px; text-align:left;
+  }
+  .hero-card-inner .tag{color:var(--gold); font-weight:700; font-size:.85rem; text-transform:uppercase; letter-spacing:.5px;}
+  .hero-card-inner h3{font-size:1.4rem; margin:6px 0 10px;}
+  .hero-card-inner p{color:var(--text-dim);}
+  .hero-card-inner .verse{
+    margin-top:14px; padding-left:14px; border-left:3px solid var(--blue); color:#cfd6f7; font-style:italic;
+  }
+
+  /* SECTIONS */
+  section{padding:76px 0;}
+  .section-head{text-align:center; max-width:680px; margin:0 auto 48px;}
+  .section-head .kicker{color:var(--teal); font-weight:700; font-size:.85rem; text-transform:uppercase; letter-spacing:.6px; margin-bottom:10px; display:block;}
+  .section-head h2{font-size:clamp(1.6rem,3.4vw,2.3rem); font-weight:800; letter-spacing:-.5px;}
+  .section-head p{color:var(--text-dim); margin-top:14px;}
+
+  /* PROBLEM */
+  .problem-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:20px;}
+  .problem-card{
+    background:var(--card); border:1px solid var(--card-border); border-radius:16px; padding:26px;
+  }
+  .problem-card .icon{font-size:1.8rem; margin-bottom:12px;}
+  .problem-card h4{font-size:1.05rem; margin-bottom:8px;}
+  .problem-card p{color:var(--text-dim); font-size:.93rem;}
+
+  /* CODES GRID */
+  .codes-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:18px;}
+  .code-card{
+    background:var(--card); border:1px solid var(--card-border); border-radius:16px; padding:24px;
+    position:relative; overflow:hidden; transition:transform .15s ease, border-color .15s ease;
+  }
+  .code-card:hover{transform:translateY(-4px); border-color:var(--blue);}
+  .code-card::before{
+    content:""; position:absolute; top:-40%; right:-30%; width:140px; height:140px; border-radius:50%;
+    background:var(--grad); opacity:.12; filter:blur(10px);
+  }
+  .code-card .num{color:var(--text-dim); font-size:.8rem; font-weight:700;}
+  .code-card h4{font-size:1.1rem; margin:6px 0 8px;}
+  .code-card p{color:var(--text-dim); font-size:.9rem;}
+  .codes-more{
+    text-align:center; margin-top:28px; color:var(--text-dim); font-size:.95rem;
+  }
+
+  /* INSIDE / WHAT YOU GET */
+  .inside{
+    display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;
+  }
+  .inside-visual{
+    background:var(--card); border:1px solid var(--card-border); border-radius:20px; padding:30px;
+  }
+  .inside-visual .mini-head{display:flex; align-items:center; gap:10px; margin-bottom:18px;}
+  .inside-visual .mini-head .sq{width:34px; height:34px; border-radius:10px; background:var(--grad); display:flex; align-items:center; justify-content:center; font-size:1.1rem;}
+  .inside-block{border-left:3px solid var(--blue); padding-left:14px; margin-bottom:18px;}
+  .inside-block h5{font-size:.95rem; color:var(--text);}
+  .inside-block p{font-size:.85rem; color:var(--text-dim);}
+  .inside ul{list-style:none;}
+  .inside li{
+    display:flex; gap:12px; margin-bottom:18px; align-items:flex-start;
+  }
+  .inside li .ck{
+    flex:none; width:26px; height:26px; border-radius:50%; background:rgba(79,214,200,.15);
+    color:var(--teal); display:flex; align-items:center; justify-content:center; font-weight:800; font-size:.85rem;
+    border:1px solid rgba(79,214,200,.4);
+  }
+  .inside li h5{font-size:1.02rem; margin-bottom:3px;}
+  .inside li p{color:var(--text-dim); font-size:.9rem;}
+
+  /* PRICE */
+  .price-wrap{display:flex; justify-content:center;}
+  .price-card{
+    max-width:460px; width:100%; border-radius:22px; padding:2px; background:var(--grad);
+  }
+  .price-card-inner{
+    background:var(--bg-soft); border-radius:20px; padding:40px 34px; text-align:center;
+  }
+  .price-card .badge{
+    display:inline-block; background:rgba(243,201,105,.14); color:var(--gold);
+    border:1px solid rgba(243,201,105,.4); font-size:.78rem; font-weight:700;
+    padding:6px 14px; border-radius:999px; margin-bottom:18px; text-transform:uppercase; letter-spacing:.4px;
+  }
+  .price-card .amount{font-size:3rem; font-weight:800; letter-spacing:-1px;}
+  .price-card .amount small{font-size:1.1rem; color:var(--text-dim); font-weight:600;}
+  .price-card .was{color:var(--text-dim); text-decoration:line-through; font-size:1rem; margin-bottom:4px;}
+  .price-list{text-align:left; margin:26px 0; list-style:none;}
+  .price-list li{display:flex; gap:10px; margin-bottom:12px; font-size:.95rem; color:#dfe4fa;}
+  .price-list li span{color:var(--teal); font-weight:800;}
+  .price-card .btn-primary{width:100%; display:block; margin-top:6px;}
+  .price-foot{color:var(--text-dim); font-size:.82rem; margin-top:16px;}
+
+  /* FAQ */
+  .faq{max-width:760px; margin:0 auto;}
+  details{
+    background:var(--card); border:1px solid var(--card-border); border-radius:14px;
+    padding:18px 22px; margin-bottom:12px;
+  }
+  summary{cursor:pointer; font-weight:700; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:10px;}
+  summary::-webkit-details-marker{display:none;}
+  summary::after{content:"+"; color:var(--blue); font-size:1.3rem; font-weight:800;}
+  details[open] summary::after{content:"–";}
+  details p{color:var(--text-dim); margin-top:12px; font-size:.95rem;}
+
+  /* FINAL CTA */
+  .final-cta{
+    text-align:center; border-radius:24px; padding:64px 24px; margin:0 24px;
+    background:
+      radial-gradient(500px 300px at 20% 0%, rgba(91,124,250,.25), transparent 60%),
+      radial-gradient(500px 300px at 80% 100%, rgba(155,107,255,.25), transparent 60%),
+      var(--card);
+    border:1px solid var(--card-border);
+  }
+  .final-cta h2{font-size:clamp(1.6rem,3.6vw,2.4rem); font-weight:800; margin-bottom:16px;}
+  .final-cta p{color:var(--text-dim); max-width:520px; margin:0 auto 32px;}
+
+  footer{
+    border-top:1px solid var(--card-border); padding:36px 24px; text-align:center;
+    color:var(--text-dim); font-size:.85rem;
+  }
+  footer .brand{justify-content:center; margin-bottom:10px;}
+
+  @media (max-width:860px){
+    .inside{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+
+<header>
+  <nav class="wrap">
+    <div class="brand"><span class="dot"></span> Código Divino</div>
+    <a href="#comprar" class="nav-cta">Quiero mi ejemplar</a>
+  </nav>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">✨ E-book devocional · Edición digital</span>
+      <h1>Descifra los <span>15 códigos espirituales</span> que pueden cambiar tu relación con Dios</h1>
+      <p class="lead">Un devocional directo y profundo sobre fe, palabra, perdón, propósito y paz interior — con explicación bíblica, aplicación práctica para tu día a día y una afirmación para declarar cada código.</p>
+      <div class="hero-ctas">
+        <a href="#comprar" class="btn-primary">Quiero leer Código Divino →</a>
+        <a href="#codigos" class="btn-ghost">Ver los 15 códigos</a>
+      </div>
+      <p class="microcopy">Acceso inmediato en PDF · Lee desde el celular, tablet o computadora</p>
+
+      <div class="hero-card">
+        <div class="hero-card-inner">
+          <span class="tag">Código de la Fe</span>
+          <h3>"La fe no espera ver para creer, sino que cree y luego ve."</h3>
+          <p>Así empieza uno de los 15 códigos de este devocional: una explicación profunda, un ejercicio práctico para aplicar hoy, y una afirmación espiritual para declarar sobre tu vida.</p>
+          <p class="verse">"Caminamos por fe, no por vista." — 2 Corintios 5:7</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section id="problema">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">¿Te suena familiar?</span>
+        <h2>Sabes lo que la Biblia dice. Pero te cuesta vivirlo.</h2>
+        <p>No es falta de fe — es falta de un camino claro para aplicar la Palabra en medio del día a día.</p>
+      </div>
+      <div class="problem-grid">
+        <div class="problem-card">
+          <div class="icon">😔</div>
+          <h4>Oras, pero la ansiedad vuelve</h4>
+          <p>Conoces los versículos de paz, pero no sabes cómo activarlos cuando todo se complica.</p>
+        </div>
+        <div class="problem-card">
+          <div class="icon">🌀</div>
+          <h4>Sientes que falta propósito</h4>
+          <p>Quieres sentir que tu vida tiene una dirección clara, dada por Dios — no solo una rutina.</p>
+        </div>
+        <div class="problem-card">
+          <div class="icon">💬</div>
+          <h4>Tus palabras no reflejan tu fe</h4>
+          <p>Declaras bendición, pero tu lenguaje diario sigue atrayendo derrota y queja.</p>
+        </div>
+        <div class="problem-card">
+          <div class="icon">🔒</div>
+          <h4>Hay heridas sin perdonar</h4>
+          <p>Sabes que debes perdonar, pero no encuentras el proceso práctico para hacerlo de verdad.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CODES PREVIEW -->
+  <section id="codigos">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Dentro del e-book</span>
+        <h2>15 códigos espirituales, explicados verso por verso</h2>
+        <p>Cada código trae una base bíblica, una explicación profunda, una aplicación práctica para tu rutina y una afirmación espiritual para declarar.</p>
+      </div>
+      <div class="codes-grid">
+        <div class="code-card"><span class="num">01</span><h4>El Código de la Fe</h4><p>Cómo activar el poder creativo de la Palabra en tus circunstancias.</p></div>
+        <div class="code-card"><span class="num">02</span><h4>El Código de la Palabra</h4><p>Por qué tu lenguaje diario construye o destruye tu destino.</p></div>
+        <div class="code-card"><span class="num">03</span><h4>El Código de la Gratitud</h4><p>La llave que transforma la escasez en abundancia.</p></div>
+        <div class="code-card"><span class="num">04</span><h4>El Código del Amor</h4><p>Amar como decisión espiritual, no como sentimiento pasajero.</p></div>
+        <div class="code-card"><span class="num">05</span><h4>El Código del Perdón</h4><p>Un proceso real para soltar el rencor y recuperar tu paz.</p></div>
+        <div class="code-card"><span class="num">06</span><h4>Siembra y Cosecha</h4><p>El principio espiritual detrás de cada fruto que esperas recibir.</p></div>
+        <div class="code-card"><span class="num">07</span><h4>El Código del Propósito</h4><p>Cómo descubrir para qué fuiste creado en esta etapa.</p></div>
+        <div class="code-card"><span class="num">08</span><h4>El Código del Desierto</h4><p>Por qué las temporadas difíciles te están formando, no castigando.</p></div>
+        <div class="code-card"><span class="num">09</span><h4>El Código de la Sabiduría</h4><p>Discernimiento espiritual para decidir mejor cada día.</p></div>
+      </div>
+      <p class="codes-more">+ Obediencia, Paciencia, el Tiempo de Dios, Paz Interior y más — 15 códigos completos en tu e-book.</p>
+    </div>
+  </section>
+
+  <!-- WHAT'S INSIDE -->
+  <section id="por-dentro">
+    <div class="wrap">
+      <div class="inside">
+        <div class="inside-visual">
+          <div class="mini-head">
+            <div class="sq">📖</div>
+            <strong>Así está estructurado cada código</strong>
+          </div>
+          <div class="inside-block">
+            <h5>💡 Explicación Profunda</h5>
+            <p>El significado espiritual del tema, con base bíblica clara.</p>
+          </div>
+          <div class="inside-block">
+            <h5>🔥 Aplicación Práctica</h5>
+            <p>Ejercicios simples para vivir el código en tu rutina real.</p>
+          </div>
+          <div class="inside-block" style="border-color:var(--purple)">
+            <h5>🙏 Afirmación Espiritual</h5>
+            <p>Una declaración para repetir y fijar la verdad en tu corazón.</p>
+          </div>
+        </div>
+        <div>
+          <span class="kicker" style="display:block;margin-bottom:10px;">Por qué funciona</span>
+          <h2 style="font-size:1.9rem; font-weight:800; margin-bottom:22px;">No es otro libro para leer y olvidar</h2>
+          <ul>
+            <li><span class="ck">✓</span><div><h5>Lenguaje simple y directo</h5><p>Sin teología complicada — ideas claras que puedes aplicar hoy mismo.</p></div></li>
+            <li><span class="ck">✓</span><div><h5>Formato devocional diario</h5><p>Lee un código por día o a tu propio ritmo, como mejor te sirva.</p></div></li>
+            <li><span class="ck">✓</span><div><h5>Acceso inmediato</h5><p>Recibes el PDF al instante después de la compra, en cualquier dispositivo.</p></div></li>
+            <li><span class="ck">✓</span><div><h5>Para toda la familia de fe</h5><p>Útil para tu tiempo personal, en pareja, en célula o en grupo de estudio.</p></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICE -->
+  <section id="comprar">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Oferta de lanzamiento</span>
+        <h2>Lleva tu ejemplar de Código Divino hoy</h2>
+        <p>Pago 100% seguro procesado por Kiwify. Acceso inmediato después de la confirmación.</p>
+      </div>
+      <div class="price-wrap">
+        <div class="price-card">
+          <div class="price-card-inner">
+            <span class="badge">Acceso instantáneo</span>
+            <div class="amount">Código Divino</div>
+            <ul class="price-list">
+              <li><span>✓</span> E-book completo en PDF (15 códigos)</li>
+              <li><span>✓</span> Explicación bíblica + aplicación práctica</li>
+              <li><span>✓</span> Afirmaciones espirituales para declarar</li>
+              <li><span>✓</span> Descarga inmediata, lee donde quieras</li>
+            </ul>
+            <a href="https://pay.kiwify.com.br/SUBSTITUIR-LINK-KIWIFY" target="_blank" rel="noopener" class="btn-primary">Comprar ahora →</a>
+            <p class="price-foot">🔒 Compra segura · Procesado por Kiwify</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Preguntas frecuentes</span>
+        <h2>Antes de comprar</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>¿Cómo recibo el e-book después de comprar?</summary>
+          <p>Después de confirmado el pago en Kiwify, recibirás el acceso de descarga por correo electrónico de forma inmediata.</p>
+        </details>
+        <details>
+          <summary>¿En qué formato está el e-book?</summary>
+          <p>Es un PDF digital que puedes leer en el celular, tablet o computadora, sin necesidad de ningún programa especial.</p>
+        </details>
+        <details>
+          <summary>¿Es solo para un tipo de iglesia o denominación?</summary>
+          <p>No. Código Divino está basado en principios bíblicos universales de fe, carácter y vida espiritual — útil para cualquier creyente, en cualquier etapa.</p>
+        </details>
+        <details>
+          <summary>¿El pago es seguro?</summary>
+          <p>Sí. Todo el proceso de pago es procesado por Kiwify, una plataforma de pagos reconocida y segura.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section>
+    <div class="final-cta">
+      <h2>Tu próximo paso espiritual empieza con una decisión</h2>
+      <p>No necesitas entenderlo todo para comenzar. Solo necesitas dar el primer paso de fe.</p>
+      <a href="#comprar" class="btn-primary">Quiero mi ejemplar de Código Divino →</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="brand">✝️ Código Divino</div>
+  <p>E-book digital · Pago procesado por Kiwify</p>
+</footer>
+
+</body>
+</html>
